@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
-import time
-import pygame
+
 
 TOKEN = ""
 bot = commands.Bot(command_prefix="!")
