@@ -2,7 +2,7 @@ import json
 from googleapiclient.discovery import build
 
 CUSTOM_SEARCH_ENGINE_ID = "6e65c67507ca027b1"
-API_KEY = "<script async src="https://cse.google.com/cse.js?cx=6e65c67507ca027b1"></script><div class="gcse-search"></div>"
+API_KEY = "AIzaSyDKUoyl-6b7hRyk_5wBAJ2RFZw7smqhRf0"
 
 def get_search_results(query):
     search = build(
