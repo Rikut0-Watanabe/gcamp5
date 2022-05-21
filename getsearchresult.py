@@ -63,7 +63,7 @@ class SearchResult:
 if __name__ == '__main__':
 
    # 検索キーワード
-   query = inputdata#キーボードからの入力情報を格納
+   query = 'hello'#キーボードからの入力情報を格納
 
    # APIから検索結果を取得
    result = get_search_results(query) # result には 返却されたjsonが入る
