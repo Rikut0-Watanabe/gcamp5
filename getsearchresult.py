@@ -17,7 +17,7 @@ def get_search_results(query):
        q = query,
        cx = CUSTOM_SEARCH_ENGINE_ID,
        lr = 'lang_ja',
-       num = 10,
+       num = 3,
        start = 1
    ).execute()
    return result
