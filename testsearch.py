@@ -77,7 +77,7 @@ class SearchResult:
 if __name__ == '__main__':
 
    # 検索キーワード
-   query = "Note"
+   query = "うんち"
 
    # APIから検索結果を取得
    result = get_search_results(query) # result には 返却されたjsonが入る
