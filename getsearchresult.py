@@ -70,5 +70,5 @@ if __name__ == '__main__':
    result_items_list = summarize_search_results(result) # result_items_list には SearchResult のリストが入る
 
    # コマンドラインに検索結果の情報を出力
-   for i in range(0, 10):
+   for i in range(0, 5):
        print(result_items_list[i])
