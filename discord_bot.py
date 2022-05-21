@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from getsearchresult import *
 
-TOKEN = "ODkzMTYwMzI0MzgxOTY2Mzg3.GInHJJ.nJXIA_YZAssQV4itGVTd3NPrUA28YbTfWWtzKw"
+TOKEN = ""
 bot = commands.Bot(command_prefix="!")
 bot.remove_command("help")
 
