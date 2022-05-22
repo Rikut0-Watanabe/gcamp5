@@ -5,7 +5,10 @@ from testsearch import *
 import random
 
 TOKEN = ""
-bot = commands.Bot(command_prefix="!")
+
+intents = discord.Intents.default()
+intents.members = True
+bot = commands.Bot(command_prefix="!", intents=intents)
 bot.remove_command("help")
 
 @bot.event
@@ -38,20 +41,20 @@ async def d(ctx, dnum, dface):
 
     
 @bot.command()
-async def t(ctx, tnum, pnum, guild_id, channel1_id, channel2_id):
+async def t(ctx, pnum, guild_name, channel1_name, channel2_name):
     state = ctx.author.voice
     if state is None:
         await ctx.send("チーム振り分け用のボイスチャンネルに入室して下さい")
 
     else:
-        guild = bot.get_guild(int(guild_id))
-        channel1 = guild.get_channel(int(channel1_id))
-        channel2 = guild.get_channel(int(channel2_id))
+        guild = discord.utils.get(bot.guilds, name=guild_name)
+        channel1 = discord.utils.get(guild.voice_channels, name=channel1_name)
+        channel2 = discord.utils.get(guild.voice_channels, name=channel2_name)
         channel = [channel1, channel2]
-        channel_mem = ctx.author.voice.channel.members
+        channel_mem = [user for user in state.channel.members]
         random.shuffle(channel_mem)
         for i in range(0, int(pnum)):
-            chan_num = i % int(tnum)
+            chan_num = i % int(2)
             await channel_mem[i].move_to(channel[chan_num])
         await ctx.send("振り分け完了")
 
